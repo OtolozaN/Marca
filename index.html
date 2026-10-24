@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Óscar Toloza Navarro | Comunicación & Marketing Digital</title>
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- NAVEGACIÓN -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#inicio" class="nav-brand">ÓSCAR <span>TOLOZA</span></a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#quien-soy" class="nav-link">Quién soy</a></li>
+        <li><a href="#educacion" class="nav-link">Educación</a></li>
+        <li><a href="#experiencia" class="nav-link">Experiencia</a></li>
+        <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
+        <li><a href="#contacto" class="btn btn-primary btn-sm">Contacto</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger" aria-label="Menú de navegación">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO / PRESENTACIÓN -->
+  <header class="hero" id="inicio">
+    <div class="container hero-grid">
+      <div class="hero-profile">
+        <div class="avatar-wrapper">
+          <img src="profile.jpg" alt="Óscar Toloza Navarro" class="avatar-img">
+        </div>
+        <div class="badge-cumlaude"><i class="fa-solid fa-award"></i> Cum Laude - UNAB</div>
+      </div>
+      <div class="hero-content">
+        <h1>Óscar Toloza Navarro</h1>
+        <p class="hero-subtitle">Comunicador Social Organizacional | Docente & Consultor</p>
+        <p class="hero-bio">
+          Especialista en comunicación digital, marketing de contenidos y estrategia transmedia. Con una trayectoria consolidada en docencia universitaria, asesoría empresarial (CDE UNAB) y gestión de medios interactivos.
+        </p>
+        <div class="hero-actions">
+          <a href="#contacto" class="btn btn-primary"><i class="fa-solid fa-envelope"></i> Contactar</a>
+          <button class="btn btn-outline" id="btn-copy-email" onclick="copyContact('ostoza11@gmail.com', 'Correo copiado al portapapeles')">
+            <i class="fa-solid fa-copy"></i> Copiar Correo
+          </button>
+        </div>
+        <div class="contact-quick-info">
+          <span><i class="fa-solid fa-location-dot"></i> Bucaramanga, Colombia</span>
+          <span><i class="fa-solid fa-phone"></i> +57 301 731 6977</span>
+          <span><i class="fa-solid fa-language"></i> Inglés (B1-B2)</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SECCIÓN QUIÉN SOY -->
+  <section class="about" id="quien-soy">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Quién soy</h2>
+        <p class="section-subtitle">Perfil profesional, enfoque estratégico y pilares de trabajo</p>
+      </div>
+
+      <div class="about-card">
+        <p class="about-text">
+          Soy Comunicador Social Organizacional con grado <strong>Cum Laude</strong> de la Universidad Autónoma de Bucaramanga (UNAB) y Magíster en Comunicación Digital por la Universidad a Distancia de Madrid (UDIMA). Cuento con amplia experiencia en la planeación, dirección y administración de contenidos digitales, ecosistemas social media y estrategias de comunicación interna y externa para el logro de objetivos corporativos.
+        </p>
+      </div>
+
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon"><i class="fa-solid fa-bullhorn"></i></div>
+          <h3 class="pillar-title">Estrategia & Marketing Digital</h3>
+          <p class="pillar-text">Diseño de planes integrales de comunicación digital, marketing de contenidos e Inbound Marketing alineados con los objetivos empresariales.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+          <h3 class="pillar-title">Docencia & Formación Virtual</h3>
+          <p class="pillar-text">Diseñador experto y docente de asignaturas de comunicación digital, Narrativas Transmedia, TIC y e-learning.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <h3 class="pillar-title">Consultoría Empresarial</h3>
+          <p class="pillar-text">Asesoría a empresas de la región a través del Centro de Desarrollo Empresarial (CDE UNAB) para potenciar su presencia digital.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon"><i class="fa-solid fa-layer-group"></i></div>
+          <h3 class="pillar-title">Gestión de Proyectos & CMS</h3>
+          <p class="pillar-text">Liderazgo de proyectos comunicativos institucionales (Misión TIC, Ulibro) y administración de portales web y plataformas LMS.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN EDUCACIÓN -->
+  <section class="education" id="educacion">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Educación & Formación</h2>
+        <p class="section-subtitle">Títulos universitarios, posgrados y certificaciones continuas</p>
+      </div>
+
+      <div class="tabs-header">
+        <button class="tab-btn active" onclick="switchEduTab('posgrados', this)">Posgrados & Grados</button>
+        <button class="tab-btn" onclick="switchEduTab('cursos', this)">Cursos & Certificaciones</button>
+      </div>
+
+      <!-- Tab: Posgrados -->
+      <div class="education-timeline" id="tab-posgrados">
+        <div class="edu-card">
+          <span class="edu-year">En curso</span>
+          <h3 class="edu-degree">Máster Oficial en Comunicación Transmedia</h3>
+          <p class="edu-institution">Universidad Internacional de La Rioja (UNIR), España</p>
+          <p class="edu-details">Profundización en narrativas multiplataforma, producción transmedia y audiencias interactivas.</p>
+        </div>
+
+        <div class="edu-card">
+          <span class="edu-year">2013 - 2015</span>
+          <h3 class="edu-degree">Magíster en Comunicación Digital</h3>
+          <p class="edu-institution">Universidad a Distancia de Madrid (UDIMA), España</p>
+          <p class="edu-details">Profundización en comunicación y marketing digital. Convalidación MEN Resolución 18525 de 2015.</p>
+        </div>
+
+        <div class="edu-card">
+          <span class="edu-year">2010 - 2011</span>
+          <h3 class="edu-degree">Especialización en Educación con Nuevas Tecnologías</h3>
+          <p class="edu-institution">Universidad Autónoma de Bucaramanga (UNAB)</p>
+          <p class="edu-details">Diseño instruccional, entornos virtuales de aprendizaje y apropiación pedagógica de las TIC.</p>
+        </div>
+
+        <div class="edu-card">
+          <span class="edu-year">Graduado 2007</span>
+          <h3 class="edu-degree">Pregrado en Comunicación Social Organizacional</h3>
+          <p class="edu-institution">Universidad Autónoma de Bucaramanga (UNAB)</p>
+          <p class="edu-details">Reconocimiento <strong>Cum Laude</strong> por desempeño académico destacado.</p>
+        </div>
+      </div>
+
+      <!-- Tab: Cursos -->
+      <div class="education-timeline hidden" id="tab-cursos">
+        <div class="edu-card">
+          <span class="edu-year">2023 - Crehana</span>
+          <h3 class="edu-degree">SEO desde cero: Posiciona en Google & Redes Sociales desde cero</h3>
+          <p class="edu-institution">Crehana</p>
+          <p class="edu-details">Optimización para motores de búsqueda y estrategias orgánicas en plataformas sociales.</p>
+        </div>
+
+        <div class="edu-card">
+          <span class="edu-year">2022 - Platzi</span>
+          <h3 class="edu-degree">Cursos en Marketing Integral & Content Strategy</h3>
+          <p class="edu-institution">Platzi</p>
+          <p class="edu-details">Comunicaciones Integradas de Marketing, Content Marketing, Community Manager e Introducción al Marketing Digital.</p>
+        </div>
+
+        <div class="edu-card">
+          <span class="edu-year">2021 - UNAB / Crehana</span>
+          <h3 class="edu-degree">Diplomado en Formación Virtual & Facebook Ads Avanzado</h3>
+          <p class="edu-institution">UNAB & Crehana</p>
+          <p class="edu-details">Inbound Marketing, pauta digital avanzada en Meta Ads y facilitación de cursos e-learning.</p>
+        </div>
+
+        <div class="edu-card">
+          <span class="edu-year">2020 - Crehana</span>
+          <h3 class="edu-degree">Marca Personal con Método Canvas & Marketing para Negocios</h3>
+          <p class="edu-institution">Crehana</p>
+          <p class="edu-details">Construcción de propuesta de valor personal y desarrollo comercial para PyMEs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN EXPERIENCIA -->
+  <section class="experience" id="experiencia">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Experiencia Profesional</h2>
+        <p class="section-subtitle">Trayectoria académica, consultoría corporativa y gestión comunicativa</p>
+      </div>
+
+      <div class="filter-bar">
+        <button class="filter-btn active" onclick="filterExp('all', this)">Todos</button>
+        <button class="filter-btn" onclick="filterExp('docencia', this)">Docencia & Academia</button>
+        <button class="filter-btn" onclick="filterExp('asesoria', this)">Asesoría & Marketing</button>
+        <button class="filter-btn" onclick="filterExp('gestion', this)">Gestión & Proyectos</button>
+      </div>
+
+      <div class="timeline">
+        <!-- Item 1 -->
+        <div class="timeline-item" data-category="docencia">
+          <div class="exp-card">
+            <h3 class="exp-role">Docente Asociado Tiempo Completo</h3>
+            <p class="exp-company">Programa de Comunicación Social - UNAB | Bucaramanga, Colombia</p>
+            <p class="exp-period"><i class="fa-regular fa-calendar"></i> Agosto 2017 - Actualmente</p>
+            <ul class="exp-list">
+              <li>Docente de cursos de ciclo básico: Comunicación y TIC, Narrativas Transmedia.</li>
+              <li>Docente de posgrado y pregrado en: Comunicación Digital en las Organizaciones, Gestión de Comunicación y Marketing Digital, Marketing de Contenidos.</li>
+              <li>Diseñador experto de cursos virtuales institucionales en Narrativas Transmedia y Comunicación Digital.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="timeline-item" data-category="asesoria">
+          <div class="exp-card">
+            <h3 class="exp-role">Asesor, Consultor y Capacitador en Comunicación y Marketing Digital</h3>
+            <p class="exp-company">Centro de Desarrollo Empresarial (CDE UNAB) | Bucaramanga, Colombia</p>
+            <p class="exp-period"><i class="fa-regular fa-calendar"></i> Febrero 2023 - Actualmente</p>
+            <ul class="exp-list">
+              <li>Asesoría personalizada a empresas y emprendimientos de la región en estrategia digital.</li>
+              <li>Diseño de diagnósticos de comunicación y planes de posicionamiento multicanal.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="timeline-item" data-category="gestion">
+          <div class="exp-card">
+            <h3 class="exp-role">Líder de Comunicaciones - Proyecto Misión TIC 2022</h3>
+            <p class="exp-company">Convenio UNAB - Ministerio TIC (MinTIC)</p>
+            <p class="exp-period"><i class="fa-regular fa-calendar"></i> Mayo 2021 - Diciembre 2022</p>
+            <ul class="exp-list">
+              <li>Planeación y ejecución de acciones de comunicación en medios virtuales y tradicionales.</li>
+              <li>Socialización de resultados de formación tecnológica de alcance nacional.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="timeline-item" data-category="docencia">
+          <div class="exp-card">
+            <h3 class="exp-role">Coordinador Académico de Especialización</h3>
+            <p class="exp-company">Especialización en Comunicación Digital y Medios Interactivos - UNAB</p>
+            <p class="exp-period"><i class="fa-regular fa-calendar"></i> Agosto 2017 - Diciembre 2021</p>
+            <ul class="exp-list">
+              <li>Coordinación general de procesos académicos y actualización curricular del programa.</li>
+              <li>Liderazgo del proceso de renovación del Registro Calificado ante el Ministerio de Educación Nacional.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="timeline-item" data-category="gestion">
+          <div class="exp-card">
+            <h3 class="exp-role">Profesional de Comunicaciones & Consejería Virtual</h3>
+            <p class="exp-company">UNAB Virtual | Bucaramanga, Colombia</p>
+            <p class="exp-period"><i class="fa-regular fa-calendar"></i> Abril 2010 - Julio 2017</p>
+            <ul class="exp-list">
+              <li>Gestión del plan de comunicación para el posicionamiento web de UNAB Virtual en 2.º lugar entre IES de Colombia hasta 2014.</li>
+              <li>Coordinación del equipo de Consejería Virtual para atención tecnológica al usuario.</li>
+              <li>Coordinación y edición de contenidos digitales y redes sociales de la Feria del Libro Ulibro (2012-2017).</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="timeline-item" data-category="gestion">
+          <div class="exp-card">
+            <h3 class="exp-role">Comunicador & Administrador de Contenidos</h3>
+            <p class="exp-company">Computadores Para Educar (CPE - UNAB) | Región Nororiente</p>
+            <p class="exp-period"><i class="fa-regular fa-calendar"></i> Mayo 2009 - Abril 2010</p>
+            <ul class="exp-list">
+              <li>Administración web y edición del boletín informativo NoTICias.</li>
+              <li><strong>Logro destacado:</strong> Incremento del tráfico del sitio web en más del 100%.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN HABILIDADES -->
+  <section class="skills" id="habilidades">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Habilidades & Herramientas</h2>
+        <p class="section-subtitle">Dominio técnico, competencias estratégicas y software especializado</p>
+      </div>
+
+      <div class="skills-grid">
+        <!-- Columna 1: Competencias Estratégicas -->
+        <div class="skill-category">
+          <h3 class="category-title"><i class="fa-solid fa-chess-knight"></i> Competencias Clave</h3>
+          
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">Comunicación y marketing digital</span>
+              <span class="skill-percent">95%</span>
+            </div>
+            <div class="progress-bg"><div class="progress-fill" style="width: 95%;"></div></div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">Marketing de Contenidos & Inbound</span>
+              <span class="skill-percent">90%</span>
+            </div>
+            <div class="progress-bg"><div class="progress-fill" style="width: 90%;"></div></div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">Gestión de Redes Sociales / Ads</span>
+              <span class="skill-percent">90%</span>
+            </div>
+            <div class="progress-bg"><div class="progress-fill" style="width: 90%;"></div></div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">Estrategias SEO & Visibilidad</span>
+              <span class="skill-percent">90%</span>
+            </div>
+            <div class="progress-bg"><div class="progress-fill" style="width: 90%;"></div></div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">Comunicación Organizacional</span>
+              <span class="skill-percent">80%</span>
+            </div>
+            <div class="progress-bg"><div class="progress-fill" style="width: 80%;"></div></div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">Narrativas Transmedia & E-learning</span>
+              <span class="skill-percent">92%</span>
+            </div>
+            <div class="progress-bg"><div class="progress-fill" style="width: 92%;"></div></div>
+          </div>
+        </div>
+
+        <!-- Columna 2: Herramientas Tech & Software -->
+        <div class="skill-category">
+          <h3 class="category-title"><i class="fa-solid fa-laptop-code"></i> Software & Plataformas</h3>
+          <p style="margin-bottom: 1rem; color: var(--text-muted); font-size: 0.95rem;">Ecosistema de plataformas utilizadas en publicación, docencia e inteligencia artificial:</p>
+          <div class="tags-wrapper">
+            <span class="tag">CMS (WordPress / Drupal)</span>
+            <span class="tag">LMS (Moodle / Canvas)</span>
+            <span class="tag tag-red"><i class="fa-solid fa-robot"></i> Herramientas IA</span>
+            <span class="tag">Meta Business Suite</span>
+            <span class="tag">Facebook Ads</span>
+            <span class="tag">Herramientas Web 2.0</span>
+            <span class="tag">Google Analytics</span>
+            <span class="tag">Microsoft Word</span>
+            <span class="tag">PowerPoint</span>
+            <span class="tag">Excel (Básico)</span>
+          </div>
+
+          <h3 class="category-title" style="margin-top: 2rem;"><i class="fa-solid fa-users-gear"></i> Habilidades Blandas</h3>
+          <div class="tags-wrapper">
+            <span class="tag tag-red">Trabajo en Equipo</span>
+            <span class="tag tag-red">Liderazgo Académico</span>
+            <span class="tag tag-red">Planeación Estratégica</span>
+            <span class="tag tag-red">Responsabilidad</span>
+            <span class="tag tag-red">Compromiso</span>
+            <span class="tag tag-red">Resolución de Problemas</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN CONTACTO -->
+  <section class="contact-section" id="contacto" style="padding: 5rem 0; background-color: var(--bg-card);">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Contacto</h2>
+        <p class="section-subtitle">¿Tienes alguna consulta o propuesta de colaboración?</p>
+      </div>
+
+      <div style="max-width: 600px; margin: 0 auto; background-color: var(--bg-main); padding: 2.5rem; border-radius: var(--radius-md); border: 1px solid var(--blue-border); box-shadow: var(--shadow-md);">
+        <div style="display: grid; gap: 1.5rem; text-align: center;">
+          <div>
+            <i class="fa-solid fa-envelope" style="font-size: 2rem; color: var(--red-primary); margin-bottom: 0.5rem;"></i>
+            <h4 style="font-size: 1.1rem; color: var(--blue-primary);">Correo Electrónico</h4>
+            <p><a href="mailto:ostoza11@gmail.com" style="font-weight: 600;">ostoza11@gmail.com</a></p>
+          </div>
+          <hr style="border: 0; border-top: 1px solid var(--blue-border);">
+          <div>
+            <i class="fa-solid fa-mobile-screen-button" style="font-size: 2rem; color: var(--red-primary); margin-bottom: 0.5rem;"></i>
+            <h4 style="font-size: 1.1rem; color: var(--blue-primary);">Teléfono / WhatsApp</h4>
+            <p><a href="tel:+573017316977" style="font-weight: 600;">+57 301 731 6977</a></p>
+          </div>
+          <hr style="border: 0; border-top: 1px solid var(--blue-border);">
+          <div>
+            <i class="fa-solid fa-location-dot" style="font-size: 2rem; color: var(--red-primary); margin-bottom: 0.5rem;"></i>
+            <h4 style="font-size: 1.1rem; color: var(--blue-primary);">Ubicación</h4>
+            <p style="color: var(--text-muted);">Bucaramanga, Santander, Colombia</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>Óscar Toloza Navarro</h3>
+          <p>Marca Personal - Comunicación & Marketing Digital</p>
+        </div>
+        <div class="footer-links">
+          <a href="#inicio" style="color: #cbd5e1; margin-right: 1rem;">Inicio</a>
+          <a href="#quien-soy" style="color: #cbd5e1; margin-right: 1rem;">Quién soy</a>
+          <a href="#educacion" style="color: #cbd5e1; margin-right: 1rem;">Educación</a>
+          <a href="#experiencia" style="color: #cbd5e1; margin-right: 1rem;">Experiencia</a>
+          <a href="#habilidades" style="color: #cbd5e1;">Habilidades</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Óscar Toloza Navarro. Sitio web listo para desplegar en GitHub Pages.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

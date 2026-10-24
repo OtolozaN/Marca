@@ -1,0 +1,761 @@
+/* ==========================================================================
+   Óscar Toloza Navarro - Marca Personal / Sitio Web
+   Hoja de Estilos CSS (styles.css)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. VARIABLES DE COLOR Y CONFIGURACIÓN GLOBAL
+   -------------------------------------------------------------------------- */
+:root {
+  /* Paleta Principal: Azules Claros y Oscuros */
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-alt: #f1f5f9;
+  
+  --text-dark: #0f172a;
+  --text-muted: #475569;
+  --text-light: #64748b;
+  
+  --blue-primary: #1e3a8a;
+  --blue-secondary: #2563eb;
+  --blue-light: #eff6ff;
+  --blue-border: #cbd5e1;
+
+  /* Paleta de Acento: Rojos Elegantes */
+  --red-primary: #dc2626;
+  --red-dark: #991b1b;
+  --red-light: #fef2f2;
+  --red-border: #fca5a5;
+  --red-hover: #b91c1c;
+
+  /* Layout y Sombras */
+  --container-max-width: 1200px;
+  --nav-height: 70px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.08);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 10px 25px -5px rgba(15, 23, 42, 0.12);
+
+  --transition-fast: all 0.2s ease;
+  --transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --------------------------------------------------------------------------
+   2. RESET Y ESTILOS BASE
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+  padding-top: var(--nav-height);
+}
+
+a {
+  color: var(--blue-secondary);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+a:hover {
+  color: var(--red-primary);
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  width: 90%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   3. TIPOGRAFÍA Y TÍTULOS
+   -------------------------------------------------------------------------- */
+h1, h2, h3, h4 {
+  color: var(--text-dark);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: 2.25rem;
+  color: var(--blue-primary);
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.75rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background-color: var(--red-primary);
+  border-radius: var(--radius-full);
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-top: 0.75rem;
+}
+
+/* --------------------------------------------------------------------------
+   4. NAVEGACIÓN Y ENCABEZADO
+   -------------------------------------------------------------------------- */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-height);
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--blue-border);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-brand {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--blue-primary);
+  letter-spacing: -0.5px;
+}
+
+.nav-brand span {
+  color: var(--red-primary);
+}
+
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-link {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--red-primary);
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--red-primary);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-dark);
+  border-radius: 2px;
+  transition: var(--transition-fast);
+}
+
+/* --------------------------------------------------------------------------
+   5. SECCIÓN HERO / INICIO
+   -------------------------------------------------------------------------- */
+.hero {
+  padding: 5rem 0 4rem;
+  background: linear-gradient(135deg, var(--bg-main) 0%, var(--blue-light) 100%);
+  border-bottom: 1px solid var(--blue-border);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero-profile {
+  text-align: center;
+}
+
+.avatar-wrapper {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  padding: 6px;
+  background: linear-gradient(135deg, var(--blue-primary), var(--red-primary));
+  box-shadow: var(--shadow-lg);
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  background-color: var(--bg-alt);
+}
+
+.badge-cumlaude {
+  display: inline-block;
+  background-color: var(--red-light);
+  color: var(--red-primary);
+  border: 1px solid var(--red-border);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.35rem 1rem;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hero-content h1 {
+  font-size: 2.75rem;
+  color: var(--blue-primary);
+  margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--red-primary);
+  margin-bottom: 1rem;
+}
+
+.hero-bio {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  max-width: 650px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* --------------------------------------------------------------------------
+   6. BOTONES Y COMPONENTES
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: var(--transition-normal);
+}
+
+.btn-primary {
+  background-color: var(--red-primary);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: var(--red-hover);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border-color: var(--blue-primary);
+  color: var(--blue-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--blue-light);
+  color: var(--blue-primary);
+  transform: translateY(-2px);
+}
+
+.btn-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 0;
+  background-color: var(--bg-card);
+  border: 1px solid var(--blue-border);
+  color: var(--blue-primary);
+}
+
+.btn-icon:hover {
+  background-color: var(--red-light);
+  color: var(--red-primary);
+  border-color: var(--red-border);
+}
+
+/* --------------------------------------------------------------------------
+   7. SECCIÓN QUIÉN SOY (PERFIL Y PILARES)
+   -------------------------------------------------------------------------- */
+.about {
+  padding: 5rem 0;
+  background-color: var(--bg-card);
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.pillar-card {
+  background-color: var(--bg-main);
+  border: 1px solid var(--blue-border);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  transition: var(--transition-normal);
+  border-top: 4px solid var(--blue-primary);
+}
+
+.pillar-card:hover {
+  border-top-color: var(--red-primary);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.pillar-icon {
+  font-size: 2rem;
+  color: var(--red-primary);
+  margin-bottom: 1rem;
+}
+
+.pillar-title {
+  font-size: 1.15rem;
+  color: var(--blue-primary);
+  margin-bottom: 0.5rem;
+}
+
+.pillar-text {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   8. SECCIÓN EDUCACIÓN
+   -------------------------------------------------------------------------- */
+.education {
+  padding: 5rem 0;
+  background-color: var(--bg-main);
+}
+
+.tabs-header {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.tab-btn {
+  background-color: var(--bg-card);
+  border: 1px solid var(--blue-border);
+  color: var(--text-dark);
+  padding: 0.6rem 1.5rem;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+  background-color: var(--blue-primary);
+  color: #ffffff;
+  border-color: var(--blue-primary);
+}
+
+.education-timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.edu-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--blue-border);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-normal);
+}
+
+.edu-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--red-border);
+}
+
+.edu-year {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--red-primary);
+  background-color: var(--red-light);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.75rem;
+}
+
+.edu-degree {
+  font-size: 1.2rem;
+  color: var(--blue-primary);
+  margin-bottom: 0.35rem;
+}
+
+.edu-institution {
+  font-weight: 600;
+  color: var(--text-dark);
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.edu-details {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   9. SECCIÓN EXPERIENCIA PROFESIONAL
+   -------------------------------------------------------------------------- */
+.experience {
+  padding: 5rem 0;
+  background-color: var(--bg-card);
+}
+
+.filter-bar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.filter-btn {
+  background-color: var(--bg-main);
+  border: 1px solid var(--blue-border);
+  color: var(--text-dark);
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background-color: var(--red-primary);
+  color: #ffffff;
+  border-color: var(--red-primary);
+}
+
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 2.5rem;
+  margin-bottom: 2rem;
+  border-left: 2px solid var(--blue-border);
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -9px;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--red-primary);
+  border: 3px solid #ffffff;
+  box-shadow: 0 0 0 2px var(--red-border);
+}
+
+.exp-card {
+  background-color: var(--bg-main);
+  border: 1px solid var(--blue-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  transition: var(--transition-normal);
+}
+
+.exp-card:hover {
+  background-color: #ffffff;
+  box-shadow: var(--shadow-md);
+}
+
+.exp-role {
+  font-size: 1.2rem;
+  color: var(--blue-primary);
+}
+
+.exp-company {
+  font-weight: 600;
+  color: var(--text-dark);
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+
+.exp-period {
+  font-size: 0.85rem;
+  color: var(--red-primary);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.exp-list {
+  padding-left: 1.25rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.exp-list li {
+  margin-bottom: 0.4rem;
+  list-style-type: disc;
+}
+
+/* --------------------------------------------------------------------------
+   10. SECCIÓN HABILIDADES Y HERRAMIENTAS
+   -------------------------------------------------------------------------- */
+.skills {
+  padding: 5rem 0;
+  background-color: var(--bg-main);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.skill-category {
+  background-color: var(--bg-card);
+  border: 1px solid var(--blue-border);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.category-title {
+  font-size: 1.25rem;
+  color: var(--blue-primary);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 2px solid var(--blue-light);
+  padding-bottom: 0.5rem;
+}
+
+.skill-item {
+  margin-bottom: 1.25rem;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.skill-name {
+  color: var(--text-dark);
+}
+
+.skill-percent {
+  color: var(--red-primary);
+}
+
+.progress-bg {
+  width: 100%;
+  height: 8px;
+  background-color: var(--bg-alt);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--blue-primary), var(--red-primary));
+  border-radius: var(--radius-full);
+  transition: width 1s ease-in-out;
+}
+
+.tags-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  background-color: var(--blue-light);
+  color: var(--blue-primary);
+  border: 1px solid var(--blue-border);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.tag-red {
+  background-color: var(--red-light);
+  color: var(--red-primary);
+  border-color: var(--red-border);
+}
+
+/* --------------------------------------------------------------------------
+   11. PIE DE PÁGINA (FOOTER)
+   -------------------------------------------------------------------------- */
+.footer {
+  background-color: var(--text-dark);
+  color: #ffffff;
+  padding: 3rem 0 1.5rem;
+  border-top: 4px solid var(--red-primary);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.footer-brand h3 {
+  color: #ffffff;
+  font-size: 1.35rem;
+}
+
+.footer-brand p {
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid #334155;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+/* --------------------------------------------------------------------------
+   12. ADAPTABILIDAD Y RESPONSIVE
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-bio {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: var(--nav-height);
+    right: -100%;
+    width: 250px;
+    height: calc(100vh - var(--nav-height));
+    background-color: #ffffff;
+    flex-direction: column;
+    padding: 2rem;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition-normal);
+  }
+
+  .nav-menu.active {
+    right: 0;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.1rem;
+  }
+}
